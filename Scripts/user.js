@@ -1,6 +1,6 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-((core) => {
+var core;
+(function (core) {
     class User {
         constructor(displayName = "", emailAddress = "", username = "", password = "") {
             this.DisplayName = displayName;

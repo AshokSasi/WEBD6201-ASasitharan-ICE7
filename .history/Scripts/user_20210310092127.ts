@@ -1,8 +1,13 @@
+
+// User Class
+
+import { Obj } from "@popperjs/core";
+
 namespace core
 {
-  export class User 
+  class User 
   {
-    // Instance Variables
+    //Instance variables 
     private m_displayName: string;
     private m_emailAddress: string;
     private m_username: string;
@@ -73,7 +78,7 @@ namespace core
      *
      * @returns {string}
      */
-    public toString() :string
+   public toString() :string
     {
       return `Display Name     : ${this.DisplayName} \nEmail Address : ${this.EmailAddress} \nUsername : ${this.Username}`;
     }
@@ -83,7 +88,7 @@ namespace core
      *
      * @returns {Object}
      */
-    public toJSON(): Object
+    public toJSON():Object
     {
       return {
         "DisplayName": this.DisplayName,
@@ -98,7 +103,7 @@ namespace core
      * @param {Object} data
      * @returns {void}
      */
-    public fromJSON(data: any): void
+    public fromJSON(data:any):void
     {
       this.DisplayName = data.DisplayName;
       this.EmailAddress = data.EmailAddress;
@@ -111,7 +116,7 @@ namespace core
      *
      * @returns {string}
      */
-    public serialize(): string
+    public serialize():string
     {
       if(this.DisplayName !== "" && this.EmailAddress !== "" && this.Username !== "")
       {
@@ -130,7 +135,7 @@ namespace core
      * @param {string} data
      * @return {void}
      */
-    public deserialize(data: string): void
+    public deserialize(data:string):void
     {
       let propertyArray = data.split(",");
       this.DisplayName = propertyArray[0];
@@ -139,4 +144,8 @@ namespace core
     }
   }
 
+
+
 }
+
+

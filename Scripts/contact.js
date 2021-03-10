@@ -1,5 +1,6 @@
 "use strict";
-((core) => {
+var core;
+(function (core) {
     class Contact {
         constructor(fullName = "", contactNumber = "", emailAddress = "") {
             this.FullName = fullName;
@@ -57,4 +58,5 @@
     }
     core.Contact = Contact;
 })(core || (core = {}));
+;
 //# sourceMappingURL=contact.js.map

@@ -2,7 +2,7 @@
 
 namespace core {
     
-    export class Router {
+    class Router {
 
         //instance variables
         private m_activeLink:string;

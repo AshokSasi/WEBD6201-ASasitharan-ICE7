@@ -2,7 +2,7 @@
 // Contact Class
 
 namespace core{
-  export class Contact {
+  class Contact {
 
     // Instance variables
     private m_fullName: string;
@@ -126,6 +126,7 @@ namespace core{
     }
   }
 
+  core.Contact = Contact;
 
 };
 
