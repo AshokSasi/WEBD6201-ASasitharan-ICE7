@@ -411,7 +411,7 @@ namespace core
         `<a id="logout" class="nav-link" aria-current="page"><i class="fas fa-sign-out-alt"></i> Logout</a>`
         );
 
-        // checks if contact-list link is not already existing
+        // checks if contact-list link is not already present
         if(!contactListLink) 
         {
           // add contact-list link
@@ -428,8 +428,7 @@ namespace core
           `<a id="login" class="nav-link" aria-current="page"><i class="fas fa-sign-in-alt"></i> Login</a>`
           );
           
-          // checks if contact-list link xists
-        if(contactListLink) 
+        if(contactListLink) // checks if contact-list link is present
         {
           // remove contact-list link
           $("#contactListLink").remove();

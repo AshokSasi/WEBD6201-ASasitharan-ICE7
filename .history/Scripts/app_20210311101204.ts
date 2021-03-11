@@ -3,11 +3,13 @@ namespace core
 
     function addLinkEvents():void
     {
-      // clear the events
+      // remove all events first
       $("ul>li>a").off("click");
       $("ul>li>a").off("mouseover");
 
-       
+       // loop through each anchor tag in the unordered list and 
+        // add an event listener / handler to allow for 
+        // content injection
         $("ul>li>a").on("click", function()
         {
           loadLink($(this).attr("id"));
@@ -28,7 +30,7 @@ namespace core
      */
     function highlightActiveLink(link:string):void
     {
-      // swap the active link
+      // swap active link
       $(`#${router.ActiveLink}`).removeClass("active"); // removes highlighted link
             
       if(link == "logout")
@@ -45,7 +47,7 @@ namespace core
 
     /**
      * This function switches page content relative to the link that is passed into the function
-     * optionally, the link data can be also be passed 
+     * optionally, link data can be also be passed 
      *
      * @param {string} link
      * @param {string} [data=""]
@@ -70,7 +72,6 @@ namespace core
       {
         $("header").html(data); // load the navigation bar
         
-
         $(`#${pageName}`).addClass("active"); // highlight active link
 
         addLinkEvents();
@@ -93,7 +94,6 @@ namespace core
         $("main").html(data);
 
         toggleLogin();
-
         callback();
       });
       
@@ -399,20 +399,18 @@ namespace core
 
     function toggleLogin(): void
     {
-      // makes a reference to the contact-list link
-      let contactListLink = $("#contactListLink")[0]; 
+      let contactListLink = $("#contactListLink")[0]; // makes a reference to the contact-list link
 
       // if user is logged in
       if(sessionStorage.getItem("user"))
-      { //Logged in ===============================================================================================================
+      { //Logged in -----------------------
 
         // swap out the login link for logout
         $("#loginListItem").html(
         `<a id="logout" class="nav-link" aria-current="page"><i class="fas fa-sign-out-alt"></i> Logout</a>`
         );
 
-        // checks if contact-list link is not already existing
-        if(!contactListLink) 
+        if(!contactListLink) // checks if contact-list link is not already present
         {
           // add contact-list link
           $(`<li id="contactListLink" class="nav-item">
@@ -421,15 +419,14 @@ namespace core
         }
       }
       else
-      { // Logged out===============================================================================================================
+      { // Logged out-----------------------
 
         // swap out the login link for logout
         $("#loginListItem").html(
           `<a id="login" class="nav-link" aria-current="page"><i class="fas fa-sign-in-alt"></i> Login</a>`
           );
           
-          // checks if contact-list link xists
-        if(contactListLink) 
+        if(contactListLink) // checks if contact-list link is present
         {
           // remove contact-list link
           $("#contactListLink").remove();

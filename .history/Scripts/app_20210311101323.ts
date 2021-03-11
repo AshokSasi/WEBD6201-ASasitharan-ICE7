@@ -70,7 +70,7 @@ namespace core
       {
         $("header").html(data); // load the navigation bar
         
-
+        
         $(`#${pageName}`).addClass("active"); // highlight active link
 
         addLinkEvents();
@@ -93,7 +93,6 @@ namespace core
         $("main").html(data);
 
         toggleLogin();
-
         callback();
       });
       
@@ -399,20 +398,18 @@ namespace core
 
     function toggleLogin(): void
     {
-      // makes a reference to the contact-list link
-      let contactListLink = $("#contactListLink")[0]; 
+      let contactListLink = $("#contactListLink")[0]; // makes a reference to the contact-list link
 
       // if user is logged in
       if(sessionStorage.getItem("user"))
-      { //Logged in ===============================================================================================================
+      { //Logged in -----------------------
 
         // swap out the login link for logout
         $("#loginListItem").html(
         `<a id="logout" class="nav-link" aria-current="page"><i class="fas fa-sign-out-alt"></i> Logout</a>`
         );
 
-        // checks if contact-list link is not already existing
-        if(!contactListLink) 
+        if(!contactListLink) // checks if contact-list link is not already present
         {
           // add contact-list link
           $(`<li id="contactListLink" class="nav-item">
@@ -421,15 +418,14 @@ namespace core
         }
       }
       else
-      { // Logged out===============================================================================================================
+      { // Logged out-----------------------
 
         // swap out the login link for logout
         $("#loginListItem").html(
           `<a id="login" class="nav-link" aria-current="page"><i class="fas fa-sign-in-alt"></i> Login</a>`
           );
           
-          // checks if contact-list link xists
-        if(contactListLink) 
+        if(contactListLink) // checks if contact-list link is present
         {
           // remove contact-list link
           $("#contactListLink").remove();
