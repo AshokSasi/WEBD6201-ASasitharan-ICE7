@@ -233,7 +233,7 @@ namespace core
 
         $("button.edit").on("click", function(){
           //TODO Fix this case = link +data
-         loadLink("edit", $(this).val().toString());
+          location.href = "/edit#" + $(this).val();
          });
 
          $("button.delete").on("click", function(){

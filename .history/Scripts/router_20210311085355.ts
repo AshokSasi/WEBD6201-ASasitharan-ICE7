@@ -25,15 +25,11 @@ namespace core {
         {
             this.m_activeLink = link;
         }
-        
-        get LinkData():string
-        {
-            return this.m_linkData;
-        }
 
-        set LinkData(data:string)
+
+        getLinkData():string
         {
-            this.m_linkData = data;
+            return this.m_l
         }
 
         // Public methods
